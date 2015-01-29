@@ -519,7 +519,22 @@
 		</div>
 
 	
-	
+		<div class="modal fade" id='formCallbackModal' tabindex="-1" role="dialog" aria-labelledby="formCallbackModal" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h2>Ahoy, {{ form.name.value }}!</h2>
+					</div>
+					<div class="modal-body">
+						{{ message }}
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-theme" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
 	
 		<!-- EXTERNAL SCRIPTS
 		============================================= -->		
@@ -538,6 +553,10 @@
 			$(function() {
 				if ({{ modal_popup }} == '1') {
 					$('#applyModal').modal('show');
+				}
+
+				if ({{ form_sent }} == '1') {
+					$('#formCallbackModal').modal('show');
 				}
 			});
 		</script>
