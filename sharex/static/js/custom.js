@@ -236,7 +236,9 @@
 			
 			//Move trough each menu and check its position with scroll position then add selected-nav class
 			$('.navbar-nav > li > a').each(function() {
-
+				if (!$(this).attr('id')) {
+					return;
+				}
 				thisHref				= $(this).attr('href');
 				thisTruePosition	= parseInt($(thisHref).offset().top);
 				thisPosition 		= thisTruePosition - headerWrapper - offsetTolerance;

@@ -843,7 +843,8 @@ a:focus {
    ========================================================================== */
  
 #features {
-	background-image: url(../img/parallax_bg/features.jpg); 
+	/*background-image: url(../img/parallax_bg/features.jpg); */
+	background-color: #fff;
 	background-attachment: fixed !important;
 	background-repeat: repeat;
 	background-position: 0 0;
@@ -857,7 +858,7 @@ a:focus {
 /*------------------------------------------*/
 
 #features .titlebar h3, #features .titlebar h2 { 
-	color: #fff;
+	color: #000;
 }
 
 /*------------------------------------------*/
@@ -898,12 +899,13 @@ a:focus {
 }
 
 .features-text h4 {
+	color: #000;
 	font-size: 20px;
 	font-weight: 400;
 }
 
 .features-text p {
-	color: #ddd;
+	color: #000;
 	font-size: 16px;
     font-weight: 300;
 	line-height: 26px;
@@ -1787,7 +1789,7 @@ a:focus {
    ========================================================================== */ 
 
 #promo_line {
-	background-image: url(../img/parallax_bg/promo-line.jpg); 
+	background-image: url(../img/slider/intro_slide_2.jpg); 
 	background-attachment: fixed !important;
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -1801,7 +1803,7 @@ a:focus {
 /*------------------------------------------*/  
 
 #promo_line h2 {
-	color: #fff;
+	color: #000;
 	font-size: 36px;
 	line-height: 42px;
 	font-weight: 400;
@@ -1811,7 +1813,7 @@ a:focus {
 }
 
 #promo_line p {
-	color: #fff;
+	color: #000;
 	font-size: 20px;
 	font-weight: 300;
 	line-height: 36px;
@@ -2284,4 +2286,15 @@ nav a#pull {
 	color: #fff;
 }
 
+/* ==========================================================================
+   24. APPLY FORM MODAL   
+   ========================================================================== */
 
+#aboutModal > div > div > div.modal-body > form > label {
+	color: #000;
+	font-size: 18px;
+	font-weight: 300;
+	letter-soacing: 1px;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}

@@ -40,8 +40,8 @@
 		<link rel="apple-touch-icon" href="{% static 'img/icons/apple-touch-icon.png' %}">
 			
 		<!-- Google Fonts -->	
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300italic,800italic,800,700italic,700,600italic,600,400italic,300' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>	
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,800italic,800,700italic,700,600italic,600,400italic,300' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>	
 				
 	</head>
 	
@@ -86,10 +86,7 @@
 							<li><a id="GoToHome" class="selected-nav" href="#intro">Home</a></li>							
 							<li><a id="GoToAbout" href="#about">About</a></li>	
 							<li><a id="GoToFeatures" href="#features">Features</a></li>							
-							{# <li><a id="GoToWorks" href="#portfolio">Works</a></li>	 #}
-							{# <li><a id="GoToTeam" href="#team">Team</a></li>	 #}
-							{# <li><a id="GoToPricing" href="#pricing">Pricing</a></li> #}
-							{# <li><a id="GoToBlog" href="#blog">Blog</a></li>									 #}
+							<li><a data-toggle='modal' data-target='#applyModal'>Apply</a></li>
 						</ul>
 					</nav>  <!-- End Navigation Menu -->
 					
@@ -128,7 +125,7 @@
 																																				
 								<!-- INTRO BUTTONS -->
 								<div class="intro_buttons">
-									<a class="btn btn-theme" href="#">Explore</a>											
+									<button class="btn btn-theme" data-toggle='modal' data-target='#applyModal'>Apply for the fleet</button>
 								</div>								
 							</div>
 								
@@ -150,7 +147,7 @@
 														
 								<!-- INTRO BUTTONS -->
 								<div class="intro_buttons">
-									<a class="btn btn-theme" href="#">Explore</a>											
+									<button class="btn btn-theme" data-toggle='modal' data-target='#applyModal'>Apply for the fleet</button>
 								</div>								
 							</div>
 								
@@ -172,7 +169,7 @@
 								
 								<!-- INTRO BUTTONS -->
 								<div class="intro_buttons">		
-									<a class="btn btn-theme" href="#">Apply for the fleet</a>									
+									<button class="btn btn-theme" data-toggle='modal' data-target='#applyModal'>Apply for the fleet</button>
 								</div>									
 							</div>
 								
@@ -245,10 +242,12 @@
 								<div id="tab_1" class="tab-pane active">
 																	
 									<!-- Tab #1 Description -->
-									<p>We are adventurous, unafraid and restless. We have an idea and we aim for a goal. But first we must cross stormy oceans. ShareX will gather all the ships, building a solid fleet of true entrepreneurs. Each ship may dock at bay to find new direction and edge toward the ultimate goal - the treasure.</p>
+									<p>Entrepreneurs are known to travel unchartered and stormy waters - adventerous, unafraid and restless. They have a goal, but are not always sure how to navigate to get there. In the midst of a storm, the entrepreneur will benefit from the help and support from other pirates sailing the same waters.</p>
+									<p>The fleets mission is to bring together entrepreneurs to share their knowledge, experiences and resources, to reach individual goals - together.</p>
+									<p>We aim to get all aboard. As the ships come together we will accelerate the wind in our sailes and find a steady course!</p>
 										
 									<!-- Tab #1 Buttons -->
-									<a href="#" class="btn btn-theme animated" data-animation="bounceIn" data-animation-delay="300">Discover More</a>		
+									<a href="#" class="btn btn-theme animated" data-animation="bounceIn" data-toggle='modal' data-target='#applyModal' data-animation-delay="300">Apply!</a>		
 										
 								</div>	<!-- END TAB #1 -->
 									
@@ -257,18 +256,11 @@
 								<div  id="tab_2" class="tab-pane">
 									
 									<!-- Tab #2 Description -->
-									<p>Nullam rutrum blandit convallis. Maecenas id nisi eget nunc convallis consectetur nec sed nibh. Mauris in gravida.
-									   Aliquam varius fringilla imperdiet. Etiam mollis est sit amet risus congue aliquam penatibus et magnis dis parturient montes feugiat
+									<p>All our pirates are endorsed by each other, that's how the fleet is balancing its load. In order to be a part of the fleet, you need other pirates to verify that you can bring necessary resources to the fleet.
 									</p>
 											
-									<p>Pellentesque sapien purus, sagittis eu accumsan convallis, vehicula ut lectus. Fusce accumsan purus pretium ligula vehicula, ut interdum nisl vulputate
-									   ultrices luctus quam eu feugiat. Nunc sagittis odio eget odio laoreet mollis
-									   Pellentesque sapien purus, sagittis eu accumsan convallis, vehicula ut lectus. Fusce accumsan purus pretium ligula vehicula Duis vestibulum lorem et eros 
-									   fermentum tristique
-									</p>
-										
-									<!-- Tab #2 Buttons -->
-									<a href="#feature_1" class="btn btn-theme animated" data-animation="bounceIn" data-animation-delay="300">View Features</a>		
+									<blockquote>- If ye thinks he be ready to sail a beauty, ye better be willin’ to sink with her.
+									</blockquote>	
 										
 								</div>	<!-- END TAB #2 -->
 								
@@ -290,8 +282,59 @@
 					
 				</div>	  <!-- End container -->
 			</section>	<!-- END ABOUT -->	
+		
+			<!-- STATISTIC BANNER
+			============================================= -->
+			<div id="statistic_banner">
+				<div class="container">
+				
+				
+					<!-- SECTION TITLE -->			
+					<div class="row">
+						<div class="col-sm-12 titlebar">
+							<h3>Some facts about us</h3>
+							<h2>We are proud of these numbers</h2>
+						</div>
+					</div>
 
-			
+					
+					<!-- STATISTIC HOLDER -->
+					<div id="statistic-holder" class="row">
+
+								
+						<!-- STATISTIC BLOCK -->
+						<div class="col-xs-3 col-sm-3 col-md-3 statistic-block animated" data-animation="bounceIn" data-animation-delay="300">					
+							<div class="statistic-number">97</div>
+							<div class="statistic-text">Ships left</div>
+						</div>
+							
+											
+						<!-- STATISTIC BLOCK -->
+						<div class="col-xs-3 col-sm-3 col-md-3 statistic-block animated" data-animation="bounceIn" data-animation-delay="400">
+							<div class="statistic-number">189</div>
+							<div class="statistic-text">Questions asked</div>
+						</div>
+							
+								
+						<!-- STATISTIC BLOCK -->
+						<div class="col-xs-3 col-sm-3 col-md-3 statistic-block animated" data-animation="bounceIn" data-animation-delay="500">
+							<div class="statistic-number">49</div>
+							<div class="statistic-text">War stories shared</div>
+						</div>
+						
+														
+						<!-- STATISTIC BLOCK -->
+						<div class="col-xs-3 col-sm-3 col-md-3 statistic-block animated" data-animation="bounceIn" data-animation-delay="600">
+							<div class="statistic-number">63</div>
+							<div class="statistic-text">Pirates in line</div>
+						</div>
+							
+
+					</div>	<!-- END STATISTIC HOLDER -->
+						
+					
+				</div>	<!-- End container -->		
+			</div>	<!-- END STATISTIC BANNER -->	
 
 			<!-- FEATURES
 			============================================= -->
@@ -317,7 +360,7 @@
 							
 								<!-- Feature Icon -->
 								<div class="icon-box img-circle">
-									<i class="fa fa-flask"></i>
+									<i class="fa fa-lightbulb-o"></i>
 								</div>
 								
 								<!-- Feature Box Text -->
@@ -402,279 +445,67 @@
 				</div><!-- End container -->
 			</section>	<!-- END FEATURES -->
 			
-			<!-- STATISTIC BANNER
-			============================================= -->
-			<div id="statistic_banner">
-				<div class="container">
-				
-				
-					<!-- SECTION TITLE -->			
-					<div class="row">
-						<div class="col-sm-12 titlebar">
-							<h3>Some facts about us</h3>
-							<h2>We are proud of these numbers</h2>
-						</div>
-					</div>
-
-					
-					<!-- STATISTIC HOLDER -->
-					<div id="statistic-holder" class="row">
-
-								
-						<!-- STATISTIC BLOCK -->
-						<div class="col-xs-3 col-sm-3 col-md-3 statistic-block animated" data-animation="bounceIn" data-animation-delay="300">					
-							<div class="statistic-number">97</div>
-							<div class="statistic-text">Ships left</div>
-						</div>
-							
-											
-						<!-- STATISTIC BLOCK -->
-						<div class="col-xs-3 col-sm-3 col-md-3 statistic-block animated" data-animation="bounceIn" data-animation-delay="400">
-							<div class="statistic-number">189</div>
-							<div class="statistic-text">Questions asked</div>
-						</div>
-							
-								
-						<!-- STATISTIC BLOCK -->
-						<div class="col-xs-3 col-sm-3 col-md-3 statistic-block animated" data-animation="bounceIn" data-animation-delay="500">
-							<div class="statistic-number">49</div>
-							<div class="statistic-text">War stories shared</div>
-						</div>
-						
-														
-						<!-- STATISTIC BLOCK -->
-						<div class="col-xs-3 col-sm-3 col-md-3 statistic-block animated" data-animation="bounceIn" data-animation-delay="600">
-							<div class="statistic-number">63</div>
-							<div class="statistic-text">Pirates in line</div>
-						</div>
-							
-
-					</div>	<!-- END STATISTIC HOLDER -->
-						
-					
-				</div>	<!-- End container -->		
-			</div>	<!-- END STATISTIC BANNER -->	
-			
-			<!-- CLIENTS
-			============================================= -->				
-			<section id="clients">
-				<div class="container">
-						
-									
-					<!-- SECTION TITLE -->	
-					<div class="row">
-						<div class="col-sm-12 ">									
-							<div class="titlebar">	
-								<h3>random pirates</h3>
-								<h2>Who love our community</h2>									
-							</div>
-						</div>	
-					</div>
-							
-										
-					<!-- CLIENTS CAROUSEL HOLDER -->
-					<div id="clients-holder" class="row">
-						<div class="col-md-12">
-						
-
-							<!-- CLIENTS CAROUSEL -->
-							<div id="our-customers" class="owl-carousel">
-													
-								<!-- CLIENT LOGO -->
-								<div id="client-logo-1" class="item">
-									<img class="img-responsive img-customer" src="{% static 'img/thumbs/client-1.png' %}" alt="customer_image">
-								</div>
-													
-								<!-- CLIENT LOGO -->
-								<div id="client-logo-2" class="item">
-									<img class="img-responsive img-customer" src="{% static 'img/thumbs/client-2.png' %}" alt="customer_image">
-								</div>
-													
-								<!-- CLIENT LOGO -->
-								<div id="client-logo-3" class="item">
-									<img class="img-responsive img-customer" src="{% static 'img/thumbs/client-3.png' %}" alt="customer_image">
-								</div>
-													
-								<!-- CLIENT LOGO -->
-								<div id="client-logo-4" class="item">
-									<img class="img-responsive img-customer" src="{% static 'img/thumbs/client-4.png' %}" alt="customer_image">
-								</div>
-													
-								<!-- CLIENT LOGO -->
-								<div id="client-logo-5" class="item">
-									<img class="img-responsive img-customer" src="{% static 'img/thumbs/client-5.png' %}" alt="customer_image">
-								</div>
-													
-								<!-- CLIENT LOGO -->
-								<div id="client-logo-6" class="item">
-									<img class="img-responsive img-customer" src="{% static 'img/thumbs/client-6.png' %}" alt="customer_image">
-								</div>
-													
-								<!-- CLIENT LOGO -->
-								<div id="client-logo-7" class="item">
-									<img class="img-responsive img-customer" src="{% static 'img/thumbs/client-1.png' %}" alt="customer_image">
-								</div>
-													
-								<!-- CLIENT LOGO -->
-								<div id="client-logo-8" class="item">
-									<img class="img-responsive img-customer" src="{% static 'img/thumbs/client-2.png' %}" alt="customer_image">
-								</div>
-								
-										
-							</div>	<!-- END CLIENTS CAROUSEL -->
-		
-						</div>
-					</div>	   <!-- END CLIENTS CAROUSEL HOLDER -->
-					
-					
-					<!-- CLIENTS CAROUSEL NAVIGATION -->	
-					<div class="customNavigation">
-						<a class="prev btn btn-theme"><i class="fa fa-angle-left"></i></a>
-						<a class="next btn btn-theme"><i class="fa fa-angle-right"></i></a>
-					</div>
-							
-							
-				</div>	  <!-- End container -->
-			</section>	<!-- END CLIENTS -->
-
 			<!-- PROMO LINE 
 			============================================= -->	
 			<div id="promo_line">			
 				<div class="container">			
-					<div class="row">
-						
-														
+					<div class="row">					
 						<!-- PROMO LINE CONTENT -->
 						<div class="col-md-12 text-center">
 						
 							<h2>Perfect for <span>any pirate</span> feeling alone in uncharted waters</h2>
 							<p>Learn and succeed together with pirates in the same situation</p>
 							
-							<a href="#" class="btn btn-theme">Apply for a ship</a>	
+							<a data-toggle='modal' data-target='#applyModal' class="btn btn-theme">Apply for a ship</a>	
 							
-						</div>
-							
-													
+						</div>					
 					</div>	 <!-- End row -->				
 				</div>	  <!-- End container -->						
 			</div>	    <!-- END PROMO LINE -->		
-			
-			<!-- CONTACTS
-			============================================= -->
-
-			{% comment %}
-			<section id="contact">
-				<div class="container">	
-					
-					
-					<!-- SECTION TITLE -->				
-					<div class="row">
-						<div class="col-sm-12 titlebar">
-							<h3>Get in touch!</h3>
-							<h2>Talk to a pirate</h2>
-						</div>
-					</div>
-						
-						
-					<!-- CONTACT FORM -->
-					<div class="row">
-						<div class="col-sm-12">
-							
-							<form id="contact-form" action="contact.php" name="contactform" class="row" method="post">
-								
-								<div id="input_name" class="col-md-6">
-									<input type="text" name="first_name" id="name" class="form-control triggerAnimation animated" data-animate="bounceIn" placeholder="Name"> 
-								</div>
-									
-								<div id="input_email" class="col-md-6">
-									<input type="text" name="email" id="email" class="form-control triggerAnimation animated" data-animate="bounceIn" placeholder="Email"> 
-								</div>
-									
-								<div id="input_subject" class="col-md-12">
-									<input type="text" name="subject" id="subject" class="form-control triggerAnimation animated" data-animate="bounceIn" placeholder="Subject"> 
-								</div>
-									
-								<div id="input_message" class="col-md-12">
-									<textarea class="form-control triggerAnimation animated" data-animate="bounceIn" name="message" id="comments" rows="6" placeholder="Your Message ..."></textarea>
-								</div>   
-									
-								<!-- Submit Button -->
-								<div id="form_btn" class="col-md-12">							
-									<div class="text-center">
-										<button type="submit" value="Ship it!" id="submit" class="btn btn-theme triggerAnimation animated" data-animate="bounceIn">
-											<i class="fa fa-fw fa-ship"></i>
-											Ship it!
-										</button>
-									</div>  
-								</div>
-									
-							</form>
-							
-						</div>		 
-					</div>	   <!-- END CONTACT FORM -->	
-						
-						
-				</div>	   <!-- End container -->	
-			</section>	 <!-- END CONTACTS -->
-			
-			
-			
-			<!-- FOOTER
-			============================================= -->
-			<footer id="footer">
-				<div class="container">
-				
-				
-					<!-- NEWSLETTER FORM -->
-					<div id="newsletter" class="row">
-						<div class="col-md-12 text-center">
-							
-							<h3>Subscribe to our newsletter</h3>	
-							<p>Be amongst the first to know about news and updates about the pirates</p>
-									
-							<form id="newsletter_form" method="post" action="subscribe.php">
-								<div id="newsletterfields">
-									<input id="s_email" type="email" value="" name="email" placeholder="Enter your email address">
-									<input type="submit" value="Subscribe">
-								</div>
-							</form>	
-								
-							<!-- Newsletter Form Message -->	
-							<div class="message"></div>
-						
-						</div>
-					</div>	<!-- END NEWSLETTER FORM -->	
-				
-				
-					<!-- FOOTER COPYRIGHT -->
-					<div class="row">						
-						<div id="footer_copyright" class="col-sm-12 text-center">		
-							<p>Copyright 2015 <span>ShareX</span>. All Rights Reserved.</p>	
-						</div>
-					</div>
-					
-					
-					<!-- FOOTER SOCIALS -->
-					<div class="row">
-					
-						<div id="footer_socials" class="col-sm-12 text-center">	
-							
-							<div id="contact_icons">																	
-								<ul class="contact-socials clearfix">
-									<li><a class="foo_social ico-facebook" href="#"><i class="fa fa-fw fa-facebook"></i></a></li>
-									<li><a class="foo_social ico-twitter" href="#"><i class="fa fa-twitter"></i></a></li>																															
-								</ul>
-							</div>
-
-						</div>	
-						
-					</div>	<!-- END FOOTER SOCIALS -->
-
-						
-				</div>	  <!-- End container -->							
-			</footer>	<!-- END FOOTER -->	
-			{% endcomment %}		
 		</div>	<!-- END CONTENT WRAPPER -->
+		<div class="modal fade" id='applyModal' role='dialog' tabindex='-1' aria-labelledby='applyLabel' aria-hidden='true'>
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<form action="{% url 'landing' %}" method="POST" class="form">
+						{% csrf_token %}
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title">So you wanna become a pirate, ey?</h4>
+						</div>
+						<div class="modal-body">
+							<div class="form-group">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
+									<input type="text" class="form-control" placeholder='Enter name' name='name' required>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-fw fa-envelope-o"></i></span>
+									<input type="email" class="form-control" placeholder='Enter email' name='email' required>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-fw fa-ship"></i></span>
+									<input type="text" class="form-control" placeholder='Enter startup' name='ship' required>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-fw fa-map-marker"></i></span>
+									<input type="text" class="form-control" placeholder='Enter city' name='harbour' required>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button class="btn btn-theme pull-left" type='submit'>Aye, captain!</button>
+							<button class="btn btn-danger" type='button' data-dismiss='modal'>Back to shore</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
 
 	
 	
