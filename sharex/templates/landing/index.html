@@ -20,7 +20,6 @@
 			
 		<!-- Libs CSS -->
 		<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet"> 
-		<link href="{% static 'css/flexslider.css' %}" rel="stylesheet">
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
 		<!-- On Scroll Animations -->
@@ -360,12 +359,12 @@
 							
 								<!-- Feature Icon -->
 								<div class="icon-box img-circle">
-									<i class="fa fa-lightbulb-o"></i>
+									<i class="fa fa-question"></i>
 								</div>
 								
 								<!-- Feature Box Text -->
 								<div class="features-text">
-									<h4>Learn from likeminded pirates</h4>
+									<h4>Learn from fellow pirates</h4>
 									<p>Do you ever have questions related to your business or pirate life - but don’t know who to ask? In our Q&A section you can direct your questions in open areas or within categories, and receive answers from pirates who have navigated the same situations and seas before. 
 									</p>
 								</div>
@@ -380,12 +379,12 @@
 							
 								<!-- Feature Icon -->
 								<div class="icon-box img-circle">
-									<i class="fa fa-cogs"></i>
+									<i class="fa fa-life-ring"></i>
 								</div>
 								
 								<!-- Feature Box Text -->
 								<div class="features-text">
-									<h4>Exchange resources</h4>
+									<h4>Trade resources</h4>
 									<p>Got some spare room on your ship or maybe your server? Make it available for another pirate and exchange favours. Or if you’re visiting another harbour, why not stay the night with another pirate or work in their office space. 
 									</p>
 								</div>
@@ -399,14 +398,13 @@
 						
 					<div class="row">	
 					
-						
 						<!-- FEATURE BOX -->
 						<div class="col-sm-6 col-md-6 animated" data-animation="fadeInLeft" data-animation-delay="500">
 							<div class="features-box">
 							
 								<!-- Feature Icon -->
 								<div class="icon-box img-circle">
-									<i class="fa fa-bars"></i>
+									<i class="fa fa-share-alt"></i>
 								</div>
 								
 								<!-- Feature Box Text -->
@@ -474,35 +472,40 @@
 						</div>
 						<div class="modal-body">
 							<div class="form-group">
+								{{ form.name.errors }}
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
-									<input type="text" class="form-control" placeholder='Enter name' name='name' required>
+									{{ form.name }}
 								</div>
 							</div>
 							<div class="form-group">
+								{{ form.email.errors }}
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-fw fa-envelope-o"></i></span>
-									<input type="email" class="form-control" placeholder='Enter email' name='email' required>
+									{{ form.email }}
 								</div>
 							</div>
 							<div class="form-group">
+								{{ form.ship.errors }}
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-fw fa-ship"></i></span>
-									<input type="text" class="form-control" placeholder='Enter startup' name='ship' required>
+									{{ form.ship }}
 								</div>
 							</div>
 							<div class="form-group">
+								{{ form.harbour.errors }}
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-fw fa-map-marker"></i></span>
-									<input type="text" class="form-control" placeholder='Enter city' name='harbour' required>
+									{{ form.harbour }}
 								</div>
 							</div>
 							<hr>
 							<div class="form-group">
+								{{ form.motivation.errors }}
 								<p class="text-muted">Tell us why you are a worthy pirate!</p>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-fw fa-star"></i></span>
-									<textarea name="motivation" rows="3" maxlength='250' class="form-control"></textarea>
+									{{ form.motivation }}
 								</div>
 							</div>
 						</div>
@@ -527,16 +530,17 @@
 		<script src="{% static 'js/retina.js' %}" type="text/javascript"></script>	
 		<script src="{% static 'js/jquery.stellar.min.js' %}" type="text/javascript"></script>	
 		<script src="{% static 'js/jquery.superslides.js' %}" type="text/javascript"></script>
-		<script defer src="{% static 'js/jquery.flexslider.js' %}" type="text/javascript"></script>
 		<script src="{% static 'js/jquery.parallax-1.1.3.js' %}" type="text/javascript"></script>
 		<script defer src="{% static 'js/count-to.js' %}"></script>
 		<script defer src="{% static 'js/jquery.appear.js' %}"></script>
-		<script src="{% static 'js/jquery.mixitup.js' %}" type="text/javascript"></script>
-		<script src="{% static 'js/jquery.prettyPhoto.js' %}" type="text/javascript"></script>
-		<script src="{% static 'js/owl.carousel.js' %}" type="text/javascript"></script>
-		<script src="{% static 'js/jquery.easypiechart.min.js' %}"></script>
-		<script defer src="{% static 'js/jquery.validate.min.js' %}" type="text/javascript"></script>	
-		<script src="{% static 'js/custom.js' %}" type="text/javascript"></script>	
+		<script src="{% static 'js/custom.js' %}" type="text/javascript"></script>
+		<script type='text/javascript'>
+			$(function() {
+				if ({{ modal_popup }} == '1') {
+					$('#applyModal').modal('show');
+				}
+			});
+		</script>
 	
 	
 		<!--[if lt IE 9]>

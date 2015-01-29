@@ -100,4 +100,4 @@ STATICFILES_DIRS = (
 try:
     from sharex.local_settings import *
 except Exception, e:
-    print e
+    pass
