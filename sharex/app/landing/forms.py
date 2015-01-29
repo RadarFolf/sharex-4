@@ -6,7 +6,7 @@ class ApplyPirateForm(forms.ModelForm):
 	harbour = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'placeholder': 'Enter city'}))
 	name = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'placeholder': 'Enter name'}))
 	email = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'placeholder': 'Enter email'}))
-	motivation = forms.CharField(max_length=250, widget=forms.Textarea(attrs={'placeholder': 'Give us a speech, eh?'}))
+	motivation = forms.CharField(max_length=250, widget=forms.Textarea(attrs={'placeholder': 'Give us a speech, eh? Keep it short!'}))
 	
 	def __init__(self, *args, **kwargs):
 		super(ApplyPirateForm, self).__init__(*args, **kwargs)
