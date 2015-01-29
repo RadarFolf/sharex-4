@@ -33,6 +33,7 @@ TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'sharex/templates'),
 )
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Application definition
 

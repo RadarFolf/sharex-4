@@ -77,15 +77,10 @@ Tags: responsive, premium template, html5 template, one page, landing page, busi
 	margin: -100px 0 0 -100px;
 	width: 200px;
 	height: 200px;
-	/*background-image: url(../img/icons/loader.gif);*/
+	background-image: url(../img/icons/loader.gif);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: 70px 70px;
-}
-
-.loader:before {
-	font-family: FontAwesome;
-	content: '&#xf21a;';
 }
        
 /*------------------------------------------*/
