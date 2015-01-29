@@ -17,6 +17,7 @@ class Pirate(models.Model):
 	email = models.EmailField()
 	harbour = models.ForeignKey(Harbour, related_name='pirates')
 	ship = models.ForeignKey(Ship, related_name='pirates')
+	motivation = models.CharField(max_length=250, blank=True, null=True)
 
 	def __unicode__(self):
 		return self.name
