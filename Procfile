@@ -1,1 +1,1 @@
-web: waitress-serve --port= sharex.wsgi:application
+web: waitress-serve --port=$PORT sharex.wsgi:application
