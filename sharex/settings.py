@@ -98,6 +98,6 @@ STATICFILES_DIRS = (
 )
 
 try:
-    from local_settings import *
-except:
-    pass
+    from sharex.local_settings import *
+except Exception, e:
+    print e

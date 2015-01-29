@@ -1,17 +1,20 @@
 from django import forms
-from .models import Pirate
+from .models import Pirate, Ship, Harbour
 
 class ApplyPirateForm(forms.ModelForm):
 	ship = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'placeholder': 'Enter your startup'}))
 	harbour = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'placeholder': 'Enter city'}))
-	name = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'placeholder': 'Enter your name'}))
-	email = forms.EmailField(max_length=50, widget=forms.TextInput(attrs={'placeholder': 'Enter your email'}))
 
 	class Meta:
 		model = Pirate
-		fields = ('name', 'email')
+		fields = ('name', 'email', 'motivation')
 
-	def __init__(self, *args, **kwargs):
-		super(ApplyPirateForm, self).__init__(*args, **kwargs)
-		for f in self.fields:
-			self.fields[f].widget.attrs['class'] = 'form-control'
+	def save(*args, **kwargs):
+		kwargs['commit'] = False
+		pirate = super(ApplyPirateForm, self).save(*args, **kwargs)
+		ship, _ = Ship.objects.get_or_create(name=self.cleaned_data['ship'].strip().lower())
+		harbour, _ = Harbour.objects.get_or_create(name=self.cleaned_data['harbour'].strip().lower())
+		pirate.ship = ship
+		pirate.harbour = harbour
+		pirate.save()
+		return pirate
