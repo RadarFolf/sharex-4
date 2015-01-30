@@ -931,3 +931,330 @@ nav a#pull {
 	text-transform: uppercase;
 	margin-bottom: 10px;
 }
+
+/* ==========================================================================
+   11. LATEST WORKS
+   ========================================================================== */
+
+#portfolio {
+	padding-top: 80px;
+}
+
+/*------------------------------------------*/
+/*	   PORTFOLIO TITLEBAR
+/*------------------------------------------*/ 
+
+#portfolio .titlebar {
+	margin-bottom: 40px;
+}
+
+/*------------------------------------------*/
+/*	  FILTER BUTTONS
+/*------------------------------------------*/ 
+
+#gallery-filter {
+	margin-bottom: 50px;
+}
+
+.btn-toolbar .btn-group {
+    float: none;
+}
+
+/*------------------------------------------*/
+/*	   Button Settings
+/*------------------------------------------*/ 
+
+#gallery-filter .btn-group > .btn {
+	background: #f4f4f4;
+    color: #333;
+	font-size: 15px;
+	font-family: 'Oswald', sans-serif;
+	font-weight: 400;
+	text-transform: uppercase;
+	margin: 0 3px;
+	padding: 8px 16px;
+	text-shadow: none;
+	-webkit-box-shadow: 0 0 0 0;
+    -moz-box-shadow: 0 0 0 0;
+     box-shadow: 0 0 0 0;
+	-webkit-transition: all 300ms ease-in-out;
+	-moz-transition: all 300ms ease-in-out;
+	-o-transition: all 300ms ease-in-out;
+	-ms-transition: all 300ms ease-in-out;
+	transition: all 300ms ease-in-out; 
+}
+
+.btn-group > .btn:first-child:not(:last-child),
+.btn-group > .btn:last-child:not(:first-child) {
+ 	-webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+/*------------------------------------------*/
+/*	   Filter Button Hover
+/*------------------------------------------*/ 
+
+#gallery-filter .btn-group > .btn:hover {
+	color: #fff;
+	background-color: #ffc400;
+}
+
+/*------------------------------------------*/
+/*	  Filter Button Active
+/*------------------------------------------*/ 
+
+#gallery-filter .btn-group > .btn.active,
+#gallery-filter .btn-group > .btn.focus {
+	color: #222;
+	background-color: #ffc400;
+	box-shadow: 0 0 0 0;
+	cursor: default;
+}
+
+/*------------------------------------------*/
+/*	  PORTFOLIO IMAGES HOLDER
+/*------------------------------------------*/ 
+
+.portfolio-items-list {
+	margin: 0;
+}
+
+/*------------------------------------------*/
+/*	  Portfolio Item
+/*------------------------------------------*/ 
+
+.portfolio-item {
+	position: relative;	
+	display: none;
+    opacity: 0;
+	-moz-opacity: 0; 
+	padding: 0;
+	text-align: center;
+}
+
+/*.portfolio-item a {
+	cursor: url(../img/icons/pointer.png),crosshair;
+}*/
+
+.hover-overlay {
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	position: relative;
+}
+
+.hover-overlay img {
+	-webkit-transition: all 600ms;
+	-moz-transition: all 600ms;
+	-o-transition: all 600ms;
+	transition: all 600ms;
+}
+
+/*------------------------------------------*/
+/*	  Overlay Content 
+/*------------------------------------------*/ 
+
+.overlay-content {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 20;
+	width: 100%;
+	text-align: center;
+	zoom: 1;
+	opacity: 0;
+	-webkit-transition: all 200ms ease-out;
+	-moz-transition: all 200ms ease-out;
+	-o-transition: all 200ms ease-out;
+	transition: all 200ms ease-out;
+}
+
+.overlay-content h4 {
+	color: #fff;
+	font-size: 22px;
+	font-weight: 800;
+	text-transform: uppercase;
+}
+
+.overlay-content h5 {
+	color: #fff;
+	font-size: 15px;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+
+/*------------------------------------------*/
+/*	  Overlay Background 
+/*------------------------------------------*/ 
+
+.item-overlay {
+	opacity: 0;
+	-moz-opacity: 0; 
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(225, 196, 0, 0.75);
+	-moz-transition: opacity 400ms ease-out;
+	-webkit-transition: opacity 400ms ease-out;
+	-o-transition: opacity 400ms ease-out;
+	transition: opacity 400ms ease-out;
+}
+
+/*------------------------------------------*/
+/*	  Image Hover Effect 
+/*------------------------------------------*/ 
+
+.hover-overlay:hover > img {
+	transform: scale(1.2);
+	-ms-transform: scale(1.2);
+	-webkit-transform: scale(1.2);
+	-o-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+}
+
+.hover-overlay:hover .item-overlay {
+	opacity: 1; 
+	-moz-opacity: 1; 
+}
+
+.portfolio-item:hover .overlay-content {
+	bottom: 40%;
+	opacity: 1; 
+	-moz-opacity: 1; 
+}
+
+/* ==========================================================================
+   12. TEAM
+   ========================================================================== */
+   
+#team {
+	padding-top: 80px;
+	padding-bottom: 30px;	
+}
+
+/*------------------------------------------*/
+/*	  TEAM MEMBER
+/*------------------------------------------*/
+
+.team-member {
+	margin-bottom: 50px;
+}
+
+.team-member .img-responsive {
+	display: inline-block;
+}
+
+/*------------------------------------------*/
+/*	  Team Member Meta
+/*------------------------------------------*/
+
+.team-img-meta h5 {
+	text-transform: uppercase;
+	font-weight: 800;
+	margin: 20px 0px 10px 0;
+}
+
+.team-img-meta h6 {
+	font-size: 14px;
+	color: #ffc400;
+	text-transform: uppercase;
+	font-weight: 400;
+	margin-bottom: 10px;
+}
+
+.team-img-meta p {
+	color: #757575;
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 300;
+}
+
+/*------------------------------------------*/
+/*	  Team Member Social Icons 
+/*------------------------------------------*/
+
+.team-member-socials {
+	text-align: right;
+	display: inline-block;
+	margin: 10px auto;
+}
+
+.team-member-socials li {
+	float: left;
+    display: inline-block !important;
+    vertical-align: top;
+    width: auto !important;
+    clear: none !important;
+}
+
+.page_social {
+    width: 30px;
+    height: 30px;
+	color: #666;
+	font-size: 16px; 
+    text-align: center;
+    display: block;
+    text-decoration: none;
+	margin: 0 3px 5px;
+	-webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+	-webkit-transition: all 250ms ease-in-out;
+	-moz-transition: all 250ms ease-in-out;
+	-o-transition: all 250ms ease-in-out;
+	-ms-transition: all 250ms ease-in-out;
+	transition: all 250ms ease-in-out;
+}
+
+/*------------------------------------------*/
+/*	 Team Member Social Icons Hover 
+/*------------------------------------------*/
+
+.page_social.ico_facebook:hover {color: #3b5998;}
+.page_social.ico_twitter:hover {color: #00a9ed;}
+.page_social.ico_behance:hover {color: #00a8e7; }
+.page_social.ico_google_plus:hover {color: #cd1111;}
+.page_social.ico_linkedin:hover {color: #015886;}
+.page_social.ico_dribbble:hover {color: #d92d84;}
+.page_social.ico_instagram:hover {color: #beb3a8;}
+.page_social.ico_pinterest:hover {color: #ac281a;}
+.page_social.ico_dropbox:hover {color: #008ad2;}
+.page_social.ico_skype:hover {color: #00a9ed; }
+.page_social.ico_youtube:hover {color: #cd1b20; }
+.page_social.ico_tumblr:hover {color: #3a5976;}
+.page_social.ico_vimeo:hover {color: #00adee;}
+.page_social.ico_flickr:hover {color: #d2d2d2;}
+.page_social.ico_github:hover {color: #222;}
+.page_social.ico_renren:hover {color: #364a83;}
+.page_social.ico_vk:hover {color: #3b5998; }
+.page_social.ico_xing:hover {color: #015f5e;}
+.page_social.ico_weibo:hover {color: #be4443;}
+.page_social.ico_rss:hover {color: #ff6600;}
+.page_social.ico_digg:hover {color: #222;}
+.page_social.ico_deviantart:hover {color: #57675d;}
+.page_social.ico_envelope:hover {color: #999;}
+.page_social.ico_delicious:hover {color: #0A0A0A; }
+
+/* ==========================================================================
+   21. FOOTER
+   ========================================================================== */ 
+ 
+#footer {
+	padding-top: 40px;
+	padding-bottom: 0px;
+	background-color: #262626;
+}
+
+#footer_copyright p {
+	color: #ddd;
+	line-height: 40px;
+}
+
+#footer_copyright p span {
+	color: #ffc400;
+	font-size: 15px;
+	font-weight: 660;
+}

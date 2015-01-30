@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .forms import ApplyPirateForm
-from django.contrib import messages
+from .models import Pirate
 
 def index(request):
 	modal_popup = 0
@@ -16,4 +16,14 @@ def index(request):
 			modal_popup = 1
 	else:
 		form = ApplyPirateForm()
-	return render(request, 'landing/index.html', {'form': form, 'modal_popup': modal_popup, 'form_sent': form_sent, 'message': message})
+	num_pirates = Pirate.objects.count()
+	return render(request, 'landing/index.html', {
+		'form': form,
+		'modal_popup': modal_popup,
+		'form_sent': form_sent,
+		'message': message,
+		'spots_left': 97 - num_pirates,
+		'questions_asked': 244,
+		'war_stories_shared': 23,
+		'pirates_in_line': 51 + num_pirates
+		})

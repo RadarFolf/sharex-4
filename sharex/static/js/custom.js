@@ -356,3 +356,34 @@
 		});
 
 	});
+
+
+		/*----------------------------------------------------*/
+	/*	Portfolio Lightbox
+	/*----------------------------------------------------*/
+	
+	$(document).ready(function(){
+	
+		"use strict";
+		
+		$("a[class^='prettyPhoto']").prettyPhoto({
+			social_tools: false,
+			default_width: 200,
+			default_height: 300,
+		});
+
+	});
+
+	/*----------------------------------------------------*/
+	/*	Filterable Portfolio
+	/*----------------------------------------------------*/
+
+	$(document).ready(function(){
+	
+		"use strict";
+
+		$("#portfolio .row").mixitup({
+			targetSelector: '.portfolio-item',
+		});
+
+	});

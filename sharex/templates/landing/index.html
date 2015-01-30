@@ -20,6 +20,7 @@
 			
 		<!-- Libs CSS -->
 		<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet"> 
+		<link href="{% static 'css/prettyPhoto.css' %}" rel="stylesheet">
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
 		<!-- On Scroll Animations -->
@@ -86,7 +87,7 @@
 							<li><a id="GoToHome" class="selected-nav" href="#intro">Home</a></li>							
 							<li><a id="GoToAbout" href="#about">About</a></li>	
 							<li><a id="GoToFeatures" href="#features">Features</a></li>							
-							<li><a data-toggle='modal' data-target='#applyModal'>Apply</a></li>
+							<li><a data-toggle='modal' data-target='#applyModal' style='cursor: pointer;'>Apply</a></li>
 						</ul>
 					</nav>  <!-- End Navigation Menu -->
 					
@@ -258,6 +259,7 @@
 									<!-- Tab #2 Description -->
 									<p>All our pirates are endorsed by each other, that's how the fleet is balancing its load. In order to be a part of the fleet, you need other pirates to verify that you can bring necessary resources to the fleet.
 									</p>
+									<p>We welcome new pirates to our fleet every week.</p>
 											
 									<blockquote>- If ye thinks he be ready to sail a beauty, ye better be willin’ to sink with her.
 									</blockquote>	
@@ -304,28 +306,28 @@
 								
 						<!-- STATISTIC BLOCK -->
 						<div class="col-xs-3 col-sm-3 col-md-3 statistic-block animated" data-animation="bounceIn" data-animation-delay="300">					
-							<div class="statistic-number">97</div>
-							<div class="statistic-text">Ships left</div>
+							<div class="statistic-number">{{ spots_left }}</div>
+							<div class="statistic-text">Spots left</div>
 						</div>
 							
 											
 						<!-- STATISTIC BLOCK -->
 						<div class="col-xs-3 col-sm-3 col-md-3 statistic-block animated" data-animation="bounceIn" data-animation-delay="400">
-							<div class="statistic-number">189</div>
+							<div class="statistic-number">{{ questions_asked }}</div>
 							<div class="statistic-text">Questions asked</div>
 						</div>
 							
 								
 						<!-- STATISTIC BLOCK -->
 						<div class="col-xs-3 col-sm-3 col-md-3 statistic-block animated" data-animation="bounceIn" data-animation-delay="500">
-							<div class="statistic-number">49</div>
+							<div class="statistic-number">{{ war_stories_shared }}</div>
 							<div class="statistic-text">War stories shared</div>
 						</div>
 						
 														
 						<!-- STATISTIC BLOCK -->
 						<div class="col-xs-3 col-sm-3 col-md-3 statistic-block animated" data-animation="bounceIn" data-animation-delay="600">
-							<div class="statistic-number">63</div>
+							<div class="statistic-number">{{ pirates_in_line }}</div>
 							<div class="statistic-text">Pirates in line</div>
 						</div>
 							
@@ -460,8 +462,262 @@
 						</div>					
 					</div>	 <!-- End row -->				
 				</div>	  <!-- End container -->						
-			</div>	    <!-- END PROMO LINE -->		
+			</div>	    <!-- END PROMO LINE -->	
+
+			<!-- LATEST WORKS
+			============================================= -->
+			{% comment %}
+			<section id="portfolio">
+				
+					
+				<!-- SECTION TITLE -->	
+				<div class="container">	
+					<div class="row">
+						<div class="col-sm-12 ">									
+							<div class="titlebar">	
+								<h3>Our fleet</h3>
+								<h2>Random pirates</h2>									
+							</div>
+						</div>	
+					</div>
+				</div>					
+				<!-- PORTFOLIO IMAGES HOLDER -->	
+				<div class="row">
+				
+					<ul class="portfolio-items-list">
+						
+					  
+						<!-- IMAGE #1 -->
+						<li class="col-xs-4 col-sm-3 col-md-2 portfolio-item illustration web">
+							<div class="hover-overlay"> 
+											
+								<!-- Image Link -->
+								<img class="img-responsive" src="{% static 'img/portfolio/andre.jpg' %}" alt="Portfolio Image">
+												
+								<!-- Image Zoom -->
+								<div class="item-overlay">										
+									<div class="overlay-content">
+										<h4>Andre Wærnes-Vold</h4>
+										<h5>readvio.com</h5>
+									</div>
+								</div>	  
+																			
+							</div>
+						</li>	<!-- END IMAGE #1 -->
+									
+												 
+						<!-- IMAGE #2 -->
+						<li class="col-xs-4 col-sm-3 col-md-2 portfolio-item digital_art illustration">
+							<div class="hover-overlay"> 
+											
+								<!-- Image Link -->
+								<img class="img-responsive" src="{% static 'img/portfolio/oyvind.jpg' %}" alt="Portfolio Image">
+											
+								<!-- Image Zoom -->				
+								<div class="item-overlay">										
+									<div class="overlay-content">
+										<h4>Øyvind Hellenes</h4>
+										<h5>corsane.com</h5>
+									</div>
+								</div>	  									
+							</div>
+						</li>	<!-- END IMAGE #2 -->
+										
+								
+						<!-- IMAGE #3 -->
+						<li class="col-xs-4 col-sm-3 col-md-2 portfolio-item graphic_design digital_art">
+							<div class="hover-overlay"> 
+									  
+								<!-- Image Link -->
+								<img class="img-responsive" src="{% static 'img/portfolio/guro.jpg' %}" alt="Portfolio Image">
+										
+								<!-- Image Zoom -->
+								<div class="item-overlay">										
+									<div class="overlay-content">
+										<h4>Guro Grytli Seim</h4>
+										<h5>morphosolar.com</h5>
+									</div>
+								</div>	  
+												
+							</div>
+						</li>	<!-- END IMAGE #3 -->
+									
+								
+						<!-- IMAGE #4 -->
+						<li class="col-xs-4 col-sm-4 col-md-2 portfolio-item illustration graphic_design">
+							<div class="hover-overlay"> 
+										  
+								<!-- Image Link -->
+								<img class="img-responsive" src="{% static 'img/portfolio/fredric.jpg' %}" alt="Portfolio Image">
+											
+								<!-- Image Zoom -->
+								<div class="item-overlay">										
+									<div class="overlay-content">
+										<h4>Fredric Hansen</h4>
+										<h5>armoni.no</h5>
+									</div>
+								</div>	  										
+							</div>
+						</li>	<!-- END IMAGE #4 -->
+						<li class="col-xs-4 col-sm-3 col-md-2 portfolio-item illustration graphic_design">
+							<div class="hover-overlay"> 
+										  
+								<!-- Image Link -->
+								<img class="img-responsive" src="{% static 'img/portfolio/michael.jpg' %}" alt="Portfolio Image">
+											
+								<!-- Image Zoom -->
+								<div class="item-overlay">										
+									<div class="overlay-content">
+										<h4>Michael Johansen</h4>
+										<h5>http://elv.technology</h5>
+									</div>
+								</div>	  										
+							</div>
+						</li>	<!-- END IMAGE #5 -->
+						<li class="col-xs-4 col-sm-3 col-md-2 portfolio-item illustration graphic_design">
+							<div class="hover-overlay"> 
+										  
+								<!-- Image Link -->
+								<img class="img-responsive" src="{% static 'img/portfolio/ina.jpg' %}" alt="Ina Amok">
+											
+								<!-- Image Zoom -->
+								<div class="item-overlay">										
+									<div class="overlay-content">
+										<h4>Ina Vikøren</h4>
+										<h5>http://amokequipment.com</h5>
+									</div>
+								</div>	  										
+							</div>
+						</li>	<!-- END IMAGE #6 -->						
+					
+					</ul>
+					
+				</div>		<!-- END PORTFOLIO IMAGES HOLDER -->
+				
+					
+			</section>	   <!-- END LATEST WORKS -->	
+			{% endcomment %}
+			<!-- TEAM
+			============================================= -->		
+			<section id="team">
+				<div class="container">	
+				
+							
+					<!-- SECTION TITLE -->				
+					<div class="row">
+						<div class="col-sm-12 titlebar">
+							<h3>the fleet</h3>
+							<h2>random pirates</h2>											
+						</div>
+					</div>
+						
+						
+					<!-- TEAM MEMBERS HOLDER -->
+					<div class="row team_members_wrapper">
+					
+						
+						<!-- TEAM MEMBER #1 -->
+						<div class="col-xs-6 col-sm-6 col-md-3 animated" data-animation="fadeInRight" data-animation-delay="500">
+							<div class="team-member text-center">
+								
+								<!-- Team Member Photo  -->	
+								<div class="img-block">
+									<img class="img-responsive" src="{% static 'img/pirates/andre.jpg' %}" alt="Andre" >
+								</div>
+								
+								<!-- Team Member Meta  -->		
+								<div class="team-img-meta">
+									<h5>Andre Wærnes-Vold</h5>
+									<h6>
+										<a style='color: #ffc400;' href="http://readvio.com" target="_blank">readvio.com</a>
+									</h6>
+								</div>
+									
+							</div>
+						</div>	<!-- END TEAM MEMBER #1 -->
+							
+						  
+						<!-- TEAM MEMBER #2 -->
+						<div class="col-xs-6 col-sm-6 col-md-3 animated" data-animation="fadeInLeft" data-animation-delay="500">						
+							<div class="team-member text-center">
+								
+								<!-- Team Member Photo  -->	
+								<div class="img-block">
+									<img class="img-responsive" src="{% static 'img/pirates/guro.jpg' %}" alt="Guro" >
+								</div>
+									
+								<!-- Team Member Meta  -->		
+								<div class="team-img-meta">
+									<h5>Guro Grytli Siem</h5>
+									<h6>
+										<a style='color: #ffc400;'  href="http://morphosolar.com" target="_blank">morphosolar.com</a>
+									</h6>	
+								</div>
+
+							</div>
+						</div>	<!-- END TEAM MEMBER #2 -->					
+							
+							
+						<!-- TEAM MEMBER #3 -->
+					   <div class="col-xs-6 col-sm-6 col-md-3 animated" data-animation="fadeInRight" data-animation-delay="800">
+							<div class="team-member text-center">
+								
+								<!-- Team Member Photo  -->	
+								<div class="img-block">
+									<img class="img-responsive" src="{% static 'img/pirates/fredric.jpg' %}" alt="Fredric" >
+								</div>
+									
+								<!-- Team Member Meta  -->		
+								<div class="team-img-meta">
+									<h5>Fredric Hansen</h5>
+									<h6>
+										<a style='color: #ffc400;'  href="http://armoni.no" target="_blank">armoni.no</a>
+									</h6>
+								</div>
+		
+							</div>
+						</div>	<!-- END TEAM MEMBER #3 -->
+						
+						
+						<!-- TEAM MEMBER #4 -->
+					    <div class="col-xs-6 col-sm-6 col-md-3 animated" data-animation="fadeInLeft" data-animation-delay="800">
+							<div class="team-member text-center">
+								
+								<!-- Team Member Photo  -->	
+								<div class="img-block">
+									<img class="img-responsive" src="{% static 'img/pirates/ina.jpg' %}" alt="Ina" >
+								</div>
+									
+								<!-- Team Member Meta  -->		
+								<div class="team-img-meta">
+									<h5>Ina Vikøren</h5>
+									<h6>
+										<a style='color: #ffc400;'  href="http://www.amokequipment.com/" target="_blank">amokequipment.com</a>
+									</h6>		
+								</div>
+		
+							</div>
+						</div>	<!-- END TEAM MEMBER #4 -->
+
+							
+					</div>	<!-- END TEAM MEMBERS HOLDER -->
+					
+						
+				</div>	  <!-- End container -->
+			</section>	<!-- END TEAM -->
+			<footer id="footer">
+				<div class="container">		
+					<!-- FOOTER COPYRIGHT -->
+					<div class="row">						
+						<div id="footer_copyright" class="col-sm-12 text-center">		
+							<p>Copyright 2015 <span>ShareX</span>. All Rights Reserved.</p>	
+						</div>
+					</div>
+				</div>	  <!-- End container -->							
+			</footer>	<!-- END FOOTER -->	
 		</div>	<!-- END CONTENT WRAPPER -->
+
+
 		<div class="modal fade" id='applyModal' role='dialog' tabindex='-1' aria-labelledby='applyLabel' aria-hidden='true'>
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -542,8 +798,10 @@
 		<script src="{% static 'js/bootstrap.min.js' %}" type="text/javascript"></script>	
 		<script src="{% static 'js/modernizr.custom.js' %}" type="text/javascript"></script>
 		<script src="{% static 'js/jquery.easing.js' %}" type="text/javascript"></script>
+		<script src="{% static 'js/jquery.prettyPhoto.js' %}" type="text/javascript"></script>
 		<script src="{% static 'js/retina.js' %}" type="text/javascript"></script>	
-		<script src="{% static 'js/jquery.stellar.min.js' %}" type="text/javascript"></script>	
+		<script src="{% static 'js/jquery.stellar.min.js' %}" type="text/javascript"></script>
+		<script src="{% static 'js/jquery.mixitup.js' %}" type="text/javascript"></script>
 		<script src="{% static 'js/jquery.superslides.js' %}" type="text/javascript"></script>
 		<script src="{% static 'js/jquery.parallax-1.1.3.js' %}" type="text/javascript"></script>
 		<script defer src="{% static 'js/count-to.js' %}"></script>
@@ -560,11 +818,9 @@
 				}
 			});
 		</script>
-		<a title="Real Time Web Analytics" href="http://clicky.com/100812767"><img alt="Real Time Web Analytics" src="//static.getclicky.com/media/links/badge.gif" border="0" /></a>
 		<script src="//static.getclicky.com/js" type="text/javascript"></script>
 		<script type="text/javascript">try{ clicky.init(100812767); }catch(e){}</script>
 		<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100812767ns.gif" /></p></noscript>
-
 		<script type="text/javascript">
 		window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
 		d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.

@@ -67,6 +67,13 @@ ROOT_URLCONF = 'sharex.urls'
 
 WSGI_APPLICATION = 'sharex.wsgi.application'
 
+#Email
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'teamsharexio@gmail.com'
+EMAIL_HOST_PASSWORD = 'teamsharex'
+
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
