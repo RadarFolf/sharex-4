@@ -98,7 +98,8 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 						<ul class="nav navbar-nav navbar-right">
 							<li><a id="GoToHome" class="selected-nav" href="#intro">Home</a></li>							
 							<li><a id="GoToAbout" href="#about">About</a></li>	
-							<li><a id="GoToFeatures" href="#features">Features</a></li>							
+							<li><a id="GoToFeatures" href="#features">Features</a></li>
+							<li><a data-toggle='modal' data-target='#loginModal' style='cursor: pointer;'>Login</a></li>
 							<li><a data-toggle='modal' data-target='#applyModal' style='cursor: pointer;'>Apply</a></li>
 						</ul>
 					</nav>  <!-- End Navigation Menu -->
@@ -786,6 +787,37 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 			</div>
 		</div>
 
+		<div class="modal fade" id='loginModal' role='dialog' tabindex='-1' aria-hidden='true'>
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Log in</h4>
+					</div>
+					<div class="modal-body">
+						<div class="form-group login-group">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-fw fa-envelope-o"></i></span>
+								<input  type="email" name='email' class="form-control" placeholder='your@email.com' required>
+							</div>
+						</div>
+						<div class="form-group login-group">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-fw fa-lock"></i></span>
+								<input type="password" name='password' class="form-control" placeholder='password' required>
+							</div>
+						</div>
+						<div class='form-errors'>
+							<p class='text-danger' id='error-message' style='display: none;'>Wrong username/password</p>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-theme" type='submit' id='loginSubmit'>Get me in!</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
 	
 		<div class="modal fade" id='formCallbackModal' tabindex="-1" role="dialog" aria-labelledby="formCallbackModal" aria-hidden="true">
 			<div class="modal-dialog">
@@ -828,6 +860,14 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 				if ({{ form_sent }} == '1') {
 					$('#formCallbackModal').modal('show');
 				}
+
+				$('#loginSubmit').on('click', function(e) {
+					$('.login-group').addClass('has-error');
+					var $err = $('#error-message');
+					if (!$err.is(':visible')) {
+						$err.fadeIn(200);
+					}
+				});
 			});
 		</script>
 		<script src="//static.getclicky.com/js" type="text/javascript"></script>
