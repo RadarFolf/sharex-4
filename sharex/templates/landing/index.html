@@ -97,8 +97,8 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 					<nav id="navigation-menu" class="collapse navbar-collapse" role="navigation">
 						<ul class="nav navbar-nav navbar-right">
 							<li><a id="GoToHome" class="selected-nav" href="#intro">Home</a></li>							
-							<li><a id="GoToAbout" href="#about">About</a></li>	
 							<li><a id="GoToFeatures" href="#features">Features</a></li>
+							<li><a id="GoToAbout" href="#about">About</a></li>	
 							<li><a data-toggle='modal' data-target='#loginModal' style='cursor: pointer;'>Login</a></li>
 							<li><a data-toggle='modal' data-target='#applyModal' style='cursor: pointer;'>Apply</a></li>
 						</ul>
@@ -216,140 +216,6 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 
 				
 			</section>	<!-- END INTRO -->
-			
-			
-			
-			<!-- ABOUT
-			============================================= -->
-			<section id="about">
-				<div class="container">	
-					
-
-					<!-- SECTION TITLE -->			
-					<div class="row">
-						<div class="col-sm-12 titlebar">
-							<h3>Who we are</h3>
-							<h2>The fleet</h2>
-						</div>
-					</div>
-					
-		
-					<!-- TABS HOLDER -->	
-					<div id="tabs-holder" class="row">
-							
-
-						<!-- TABS -->
-						<div class="col-md-7">	
-						
-						
-							<!-- Nav Tabs -->
-							<ul class="nav nav-tabs" role="tablist">
-								<li class="active animated" data-animation="bounceIn" data-animation-delay="300"><a href="#tab_1" role="tab" data-toggle="tab">The fleet philosophy</a></li>
-								<li class=" animated" data-animation="bounceIn" data-animation-delay="400"><a href="#tab_2" role="tab" data-toggle="tab">The pirates</a></li>
-							</ul>
-								
-
-							<!-- Tab Panes -->
-							<div class="tab-content">
-							
-								<!-- TAB #1 -->
-								<div id="tab_1" class="tab-pane active">
-																	
-									<!-- Tab #1 Description -->
-									<p>Entrepreneurs are known to travel unchartered and stormy waters - adventerous, unafraid and restless. They have a goal, but are not always sure how to navigate to get there. In the midst of a storm, the entrepreneur will benefit from the help and support from other pirates sailing the same waters.</p>
-									<p>The fleets mission is to bring together entrepreneurs as pirates to share their knowledge, experiences and resources, to reach individual goals - together.</p>
-									<p>We aim to get all aboard. As the ships come together we will accelerate the wind in our sails and find a steady course!</p>
-										
-									<!-- Tab #1 Buttons -->
-									<a href="#" class="btn btn-theme animated" data-animation="bounceIn" data-toggle='modal' data-target='#applyModal' data-animation-delay="300">Apply!</a>		
-										
-								</div>	<!-- END TAB #1 -->
-									
-										
-								<!-- TAB #2 -->
-								<div  id="tab_2" class="tab-pane">
-									
-									<!-- Tab #2 Description -->
-									<p>All our pirates are endorsed by each other, that's how the fleet is balancing its load. In order to be a part of the fleet, you need other pirates to verify that you can bring necessary resources to the fleet.
-									</p>
-									<p>We welcome new pirates to our fleet every week.</p>
-											
-									<blockquote>If ye thinks he be ready to sail a beauty, ye better be willin’ to sink with her.
-									</blockquote>	
-										
-								</div>	<!-- END TAB #2 -->
-								
-									
-							</div>	<!-- End Tab Panes -->
-							
-								
-						</div>	<!-- END TABS -->	
-							
-								 
-						<!-- TABS HOLDER IMAGE -->	
-						<div class="col-md-5 text-center animated" data-animation="fadeInRight" data-animation-delay="600">
-							<img class="img-responsive" src="{% static 'img/thumbs/about-image.jpg' %}" alt="about-image" />
-						</div>
-							
-							 
-					</div>	<!-- END TABS HOLDER -->	
-					
-					
-				</div>	  <!-- End container -->
-			</section>	<!-- END ABOUT -->	
-		
-			<!-- STATISTIC BANNER
-			============================================= -->
-			<div id="statistic_banner">
-				<div class="container">
-				
-				
-					<!-- SECTION TITLE -->			
-					<div class="row">
-						<div class="col-sm-12 titlebar">
-							<h3>Some facts about us</h3>
-							<h2>We are proud of these numbers</h2>
-						</div>
-					</div>
-
-					
-					<!-- STATISTIC HOLDER -->
-					<div id="statistic-holder" class="row">
-
-								
-						<!-- STATISTIC BLOCK -->
-						<div class="col-xs-3 col-sm-3 col-md-3 statistic-block animated" data-animation="bounceIn" data-animation-delay="300">					
-							<div class="statistic-number">{{ spots_left }}</div>
-							<div class="statistic-text">Spots left</div>
-						</div>
-							
-											
-						<!-- STATISTIC BLOCK -->
-						<div class="col-xs-3 col-sm-3 col-md-3 statistic-block animated" data-animation="bounceIn" data-animation-delay="400">
-							<div class="statistic-number">{{ questions_asked }}</div>
-							<div class="statistic-text">Questions asked</div>
-						</div>
-							
-								
-						<!-- STATISTIC BLOCK -->
-						<div class="col-xs-3 col-sm-3 col-md-3 statistic-block animated" data-animation="bounceIn" data-animation-delay="500">
-							<div class="statistic-number">{{ war_stories_shared }}</div>
-							<div class="statistic-text">War stories shared</div>
-						</div>
-						
-														
-						<!-- STATISTIC BLOCK -->
-						<div class="col-xs-3 col-sm-3 col-md-3 statistic-block animated" data-animation="bounceIn" data-animation-delay="600">
-							<div class="statistic-number">{{ pirates_in_line }}</div>
-							<div class="statistic-text">Pirates in line</div>
-						</div>
-							
-
-					</div>	<!-- END STATISTIC HOLDER -->
-						
-					
-				</div>	<!-- End container -->		
-			</div>	<!-- END STATISTIC BANNER -->	
 
 			<!-- FEATURES
 			============================================= -->
@@ -458,6 +324,142 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 					
 				</div><!-- End container -->
 			</section>	<!-- END FEATURES -->
+			
+			
+			
+		
+			<!-- STATISTIC BANNER
+			============================================= -->
+			<div id="statistic_banner">
+				<div class="container">
+				
+				
+					<!-- SECTION TITLE -->			
+					<div class="row">
+						<div class="col-sm-12 titlebar">
+							<h3>Some facts about us</h3>
+							<h2>We are proud of these numbers</h2>
+						</div>
+					</div>
+
+					
+					<!-- STATISTIC HOLDER -->
+					<div id="statistic-holder" class="row">
+
+								
+						<!-- STATISTIC BLOCK -->
+						<div class="col-xs-3 col-sm-3 col-md-3 statistic-block animated" data-animation="bounceIn" data-animation-delay="300">					
+							<div class="statistic-number">{{ spots_left }}</div>
+							<div class="statistic-text">Spots left</div>
+						</div>
+							
+											
+						<!-- STATISTIC BLOCK -->
+						<div class="col-xs-3 col-sm-3 col-md-3 statistic-block animated" data-animation="bounceIn" data-animation-delay="400">
+							<div class="statistic-number">{{ questions_asked }}</div>
+							<div class="statistic-text">Questions asked</div>
+						</div>
+							
+								
+						<!-- STATISTIC BLOCK -->
+						<div class="col-xs-3 col-sm-3 col-md-3 statistic-block animated" data-animation="bounceIn" data-animation-delay="500">
+							<div class="statistic-number">{{ war_stories_shared }}</div>
+							<div class="statistic-text">War stories shared</div>
+						</div>
+						
+														
+						<!-- STATISTIC BLOCK -->
+						<div class="col-xs-3 col-sm-3 col-md-3 statistic-block animated" data-animation="bounceIn" data-animation-delay="600">
+							<div class="statistic-number">{{ pirates_in_line }}</div>
+							<div class="statistic-text">Pirates in line</div>
+						</div>
+							
+
+					</div>	<!-- END STATISTIC HOLDER -->
+						
+					
+				</div>	<!-- End container -->		
+			</div>	<!-- END STATISTIC BANNER -->	
+
+			<!-- ABOUT
+			============================================= -->
+			<section id="about">
+				<div class="container">	
+					
+
+					<!-- SECTION TITLE -->			
+					<div class="row">
+						<div class="col-sm-12 titlebar">
+							<h3>Who we are</h3>
+							<h2>The fleet</h2>
+						</div>
+					</div>
+					
+		
+					<!-- TABS HOLDER -->	
+					<div id="tabs-holder" class="row">
+							
+
+						<!-- TABS -->
+						<div class="col-md-7">	
+						
+						
+							<!-- Nav Tabs -->
+							<ul class="nav nav-tabs" role="tablist">
+								<li class="active animated" data-animation="bounceIn" data-animation-delay="300"><a href="#tab_1" role="tab" data-toggle="tab">The fleet philosophy</a></li>
+								<li class=" animated" data-animation="bounceIn" data-animation-delay="400"><a href="#tab_2" role="tab" data-toggle="tab">The pirates</a></li>
+							</ul>
+								
+
+							<!-- Tab Panes -->
+							<div class="tab-content">
+							
+								<!-- TAB #1 -->
+								<div id="tab_1" class="tab-pane active">
+																	
+									<!-- Tab #1 Description -->
+									<p>Entrepreneurs are known to travel unchartered and stormy waters - adventerous, unafraid and restless. They have a goal, but are not always sure how to navigate to get there. In the midst of a storm, the entrepreneur will benefit from the help and support from other pirates sailing the same waters.</p>
+									<p>The fleets mission is to bring together entrepreneurs as pirates to share their knowledge, experiences and resources, to reach individual goals - together.</p>
+									<p>We aim to get all aboard. As the ships come together we will accelerate the wind in our sails and find a steady course!</p>
+										
+									<!-- Tab #1 Buttons -->
+									<a href="#" class="btn btn-theme animated" data-animation="bounceIn" data-toggle='modal' data-target='#applyModal' data-animation-delay="300">Apply!</a>		
+										
+								</div>	<!-- END TAB #1 -->
+									
+										
+								<!-- TAB #2 -->
+								<div  id="tab_2" class="tab-pane">
+									
+									<!-- Tab #2 Description -->
+									<p>All our pirates are endorsed by each other, that's how the fleet is balancing its load. In order to be a part of the fleet, you need other pirates to verify that you can bring necessary resources to the fleet.
+									</p>
+									<p>We welcome new pirates to our fleet every week.</p>
+											
+									<blockquote>If ye thinks he be ready to sail a beauty, ye better be willin’ to sink with her.
+									</blockquote>	
+										
+								</div>	<!-- END TAB #2 -->
+								
+									
+							</div>	<!-- End Tab Panes -->
+							
+								
+						</div>	<!-- END TABS -->	
+							
+								 
+						<!-- TABS HOLDER IMAGE -->	
+						<div class="col-md-5 text-center animated" data-animation="fadeInRight" data-animation-delay="600">
+							<img class="img-responsive" src="{% static 'img/thumbs/about-image.jpg' %}" alt="about-image" />
+						</div>
+							
+							 
+					</div>	<!-- END TABS HOLDER -->	
+					
+					
+				</div>	  <!-- End container -->
+			</section>	<!-- END ABOUT -->	
+
 			
 			<!-- PROMO LINE 
 			============================================= -->	
