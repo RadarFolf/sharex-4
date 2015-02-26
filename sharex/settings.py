@@ -55,7 +55,7 @@ PROJECT_APPS = (
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS
 
 MIDDLEWARE_CLASSES = (
-    # 'sslify.middleware.SSLifyMiddleware',
+    'sslify.middleware.SSLifyMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -112,7 +112,7 @@ LOGIN_URL = '/'
 MIXPANEL_APPID = 'd0c95a262e71a16450fe3eca98355771'
 
 #DJANGO SSLIFY
-# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 try:
     from sharex.local_settings import *
