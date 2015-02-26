@@ -55,7 +55,7 @@ PROJECT_APPS = (
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS
 
 MIDDLEWARE_CLASSES = (
-    'sslify.middleware.SSLifyMiddleware',
+    # 'sslify.middleware.SSLifyMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -71,10 +71,10 @@ WSGI_APPLICATION = 'sharex.wsgi.application'
 
 #Email
 EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'smtp.zoho.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'teamsharexio@gmail.com'
-EMAIL_HOST_PASSWORD = 'teamsharex'
+EMAIL_HOST_USER = 'martin@sharex.io'
+EMAIL_HOST_PASSWORD = 'martinroed'
 
 
 # Database
@@ -112,7 +112,7 @@ LOGIN_URL = '/'
 MIXPANEL_APPID = 'd0c95a262e71a16450fe3eca98355771'
 
 #DJANGO SSLIFY
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 try:
     from sharex.local_settings import *
