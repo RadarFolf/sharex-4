@@ -1,0 +1,55 @@
+{% extends 'landing/base.html' %}
+{% load staticfiles %}
+{% block left_content %}
+<h1>Sharex</h1>
+<h3>We are building the worlds first online incubator.</br>
+	Apply now to connect with perfect startups in your space and solve problems faster.</h3>
+{% endblock %}
+
+{% block right_content %}
+<div class="narrow">
+    <div class="form-box align-center">
+        <form id="signup" name="signup" method="post" novalidate="novalidate" action="{% url 'landing_view' %}">
+        	{% csrf_token %}
+            <h2>
+            	<span>Share your </span>
+            	<span id="changable" class="text-right">experiences</span>
+            </h2>
+            <p>I don't want to waste more time finding relevant startups</p>
+            <input type="hidden" id='mix-id' value="" name='mixid'>
+            <div class="form-row">   
+                <input type="email" name="email" required="" class="form-control"  placeholder="name@startup.io">
+            </div>
+            <div class="form-row">                                       
+                <input type="password" name="password" required="" class="form-control"  placeholder="password">
+            </div>
+            <div class="form-row">                                      
+                <input id="submit" type="submit" name="submit" value="Sign up" class="btn btn-wide">
+            </div>
+            <div class="align-center text-muted">
+                <span>Already have an account? </span>
+                <a href="{% url 'login_view' %}">Sign in.</a>
+            </div>
+        </form> 
+    </div>
+    <div class="shadow"></div>
+    <div class="meta align-center">
+        <a>We would never share your info. NEVER!</a>
+    </div>
+    
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+    $(function() {
+        mixpanel.track('Landing page');
+
+        $('#signup').submit(function(e) {
+            // e.preventDefault();
+            $('#mix-id').val(mixpanel.get_distinct_id());
+            console.log(mixpanel.get_distinct_id());
+        });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'landing/base.html' %}
+{% load staticfiles %}
+
+{% block left_content %}
+<h1>Sharex</h1>
+<h3>We are actively searching the world for the perfect startups for your incubator</h3>
+{% endblock %}
+
+{% block right_content %}
+<div class="wide">
+    <div class="form-box align-center">
+        {% if user.token %}
+            <h2>Be patient</h2>
+            <p>There are {{ count_profiles }} startups waiting to be connected at this moment. We'll make sure you'll get the best of everything.</p>
+            <p>If you want to be more involved in the process, we'd love to have a Skype chat with you, our skype handle is <strong>sharexio</strong></p>
+        {% else %}
+            <h2>Be patient</h2>
+            <p>There are 37 startups waiting to be connected at this moment, we're gonna have to start with our paid users, the one who wants this the most.</p>
+            <p>If you want to be more involved in the process, we'd love to have a Skype chat with you, our skype handle is <strong>sharexio</strong></p>
+            <p>You can always update to pro to get bumped up.</p>
+        {% endif %}
+    </div>
+    <div class="shadow"></div>
+    
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+    $(function() {
+        {% if user.token %}
+            mixpanel.track('Success page', {'plan': 'Pro'});
+        {% else %}
+            mixpanel.track('Success page', {'plan': 'Free'});
+        {% endif %}
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'landing/base.html' %}
+{% load staticfiles %}
+{% block left_content %}
+<h1>Sharex</h1>
+<h3>We are building the worlds first online incubator.</br>
+	Apply now to connect with perfect startups in your space and solve problems faster.</h3>
+{% endblock %}
+
+{% block right_content %}
+<div class="narrow">
+    <div class="form-box align-center">
+        <form id="login" name="login" method="post" novalidate="novalidate" action="{% url 'login_view' %}">
+        	{% csrf_token %}
+            <h2>
+            	Welcome back
+            </h2>
+            <p>You have missed your fellow startups, haven't you?</p>
+            <input type="hidden" id='mix-id' value="" name='mixid'>
+            <div class="form-row">   
+                <input type="email" name="email" required="" class="form-control"  placeholder="name@startup.io">
+            </div>
+            <div class="form-row">                                       
+                <input type="password" name="password" required="" class="form-control"  placeholder="password">
+            </div>
+            <div class="form-row">                                      
+                <input id="submit" type="submit" name="submit" value="Log in" class="btn btn-wide">
+            </div>
+        </form> 
+    </div>
+    <div class="shadow"></div>
+    <div class="meta align-center">
+        <a>We would never share your info. NEVER!</a>
+    </div>
+    
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+    $(function() {
+        mixpanel.track('Login page');
+    });
+</script>
+{% endblock %}

@@ -48,7 +48,8 @@ DJANGO_APPS = (
 )
 
 PROJECT_APPS = (
-    'sharex.app.landing',
+    'sharex.landing',
+    'sharex.profiles',
 )
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS
@@ -103,6 +104,11 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'sharex/static'),
 )
+
+AUTH_USER_MODEL = 'profiles.Profile'
+LOGIN_URL = '/'
+
+MIXPANEL_APPID = 'd0c95a262e71a16450fe3eca98355771'
 
 try:
     from sharex.local_settings import *
