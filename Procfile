@@ -1,1 +1,1 @@
-web: waitress-serve --port=$PORT sharex.wsgi:application
+web: newrelic-admin waitress-serve --port=$PORT sharex.wsgi:application
