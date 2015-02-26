@@ -20,9 +20,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '+(+#&27-*dxwpivh0nhv%pxm^(x^3-mew(uu!_i6ni!--*0bhs'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = ['*']
 
@@ -55,6 +55,7 @@ PROJECT_APPS = (
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS
 
 MIDDLEWARE_CLASSES = (
+    'sslify.middleware.SSLifyMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -109,6 +110,9 @@ AUTH_USER_MODEL = 'profiles.Profile'
 LOGIN_URL = '/'
 
 MIXPANEL_APPID = 'd0c95a262e71a16450fe3eca98355771'
+
+#DJANGO SSLIFY
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 try:
     from sharex.local_settings import *
