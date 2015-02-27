@@ -2,11 +2,17 @@ from django.db import models
 from django.utils import timezone as dtimezone
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 import pytz
+import re
 
+def valid_email(email):
+	EMAIL_REGEX = re.compile(r"[^@]+@[^@]+\.[^@]+")
+	if EMAIL_REGEX.match(email):
+		return True
+	return False
 
 class ProfileManager(BaseUserManager):
 	def create_user(self, email, password, **extra_fields):
-		if not email:
+		if not email or not valid_email(email):
 			raise ValueError('Profile needs an email address')
 		user = self.model(
 			email=self.normalize_email(email),

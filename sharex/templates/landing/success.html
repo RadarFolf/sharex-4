@@ -39,13 +39,14 @@
 
 <div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="myModalLabel">
     <div class="modal-dialog">
-        <form action="{% url 'success_view' %}" method="POST">
+        <form action="{% url 'success_view' %}" method="POST" id='team-email-form'>
             {% csrf_token %}
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h3>Add teammates</h3>
                     <p>Separate the emails with comma or whitespace</p>
+                    <p class="text-muted" style="display: none;" id='help-text'>Add at least one email.</p>
                 </div>
                 <div class="modal-body">
                     <input type="text" id="team-emails" name="emails" style="width: 100%;" />
@@ -71,6 +72,12 @@
             mixpanel.track('Success page', {'plan': 'Free'});
         {% endif %}
         $('#team-emails').select2({tags: [], tokenSeparators:[',', ' ']})
+        $('#team-email-form').submit(function(e) {
+            if ($('#team-emails').val().length == 0) {
+                $('#help-text').show();
+                e.preventDefault();
+            }
+        });
     });
 </script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/select2/3.5.2/select2.js" type="text/javascript"></script>
