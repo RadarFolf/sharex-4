@@ -13,6 +13,8 @@
         for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
         mixpanel.init("d0c95a262e71a16450fe3eca98355771");
     </script>
+    {% block head %}
+    {% endblock %}
 </head> 
 <body>
 
@@ -27,8 +29,13 @@
     
     <div class="right">
         <a href="{% url 'logout_view' %}" class="pull-right" style="color: white; padding-right: 10px;"><i class="fa fa-fw fa-sign-out"></i></a>
-    
         <section>
+            {% for message in messages %}
+                <div class="alert alert-dismissable alert-info narrow" style="margin-bottom: 15px;">
+                    <button class="close" type="button" data-dismiss="alert"> x</button>
+                    <p>{{ message }}</p>
+                </div>
+            {% endfor %}
             {% block right_content %}
             {% endblock %}                    
         </section>

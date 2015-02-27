@@ -2,53 +2,48 @@
 
 {% block left_content %}
 <h1>Sharex</h1>
-<h3>Let us get some insight on your startup,so we can connect you with the most valuable network.</h3>
+<h3>We will connect you with the most valuable startups - but first, we need to know you.</h3>
 {% endblock %}
 
 {% block right_content %}
 
 <div class="title align-center">
 				
-	<h2>Who are you?</h2>
-	<p>Let us learn about you, so we can help.</p>	
+	<h2>Your startup</h2>
+	<p>Tell us your story.</p>	
 	
 </div>
 
 <div class="wide">
-
 	<div class="form-box">		
-		<form method="post" action="">
+		<form method="post" action="{% url 'apply_view' %}">
 			{% csrf_token %}
 			<div class="form-row">
-				<label>Name of your startup</label>
+				<label>Startup name</label>
 				<input type="text" class="form-control" name="name" placeholder="sharex">
 			</div>
 			<div class="form-row">
-				<label>Do you have a website?</label>
-				<input type="url" class="form-control" name="website" placeholder="sharex.io">
-			</div>
-			<div class="form-row">
-				<label>Give us a short pitch</label>
-				<textarea class="form-control" style="width: 100%" name="pitch" placeholder="We are building online incubators with startups that can actually solve problems faster."></textarea>
+				<label>Your elevator pitch</label>
+				<textarea class="form-control" style="width: 100%" name="pitch" placeholder="We are building online incubators with startups that can actually solve problems faster, together."></textarea>
 		    </div> 
+			<div class="form-row">
+				<label>Your website?</label>
+				<input type="url" class="form-control" name="website" placeholder="http://sharex.io">
+			</div>
 			<div class="form-row">		
-				<label>What is your revenue model(s)?</label>
-				<input class="form-control" type="text" name="revenuemodel" placeholder="Subscription-based and affiliate marketing">
+				<label>Your revenue model(s)?</label>
+				<input class="form-control" type="text" name="revenuemodel" placeholder="Freemium">
 		    </div> 
 		    <div class="form-row">
-				<label>What was your last big achievement?</label>
-			    <input type="text" class="form-control" name="last_milestone" placeholder="Get our hypothesis confirmed">
+				<label>Your last achievement?</label>
+			    <input type="text" class="form-control" name="last_milestone" placeholder="We launched our product">
 			</div>
 			<div class="form-row">
-				<label>What's your next big goal?</label>
-			    <input type="text" class="form-control" name="next_milestone" placeholder="Build out our product">
-			</div>
-			<div class="form-row">	
-				<label>Additional information</label>								     
-			    <textarea name="additional" id="message" class="form-control" placeholder="Anything you think might help us connect you to the most relevant startups." style="width: 100%"></textarea>
+				<label>Your next goal?</label>
+			    <input type="text" class="form-control" name="next_milestone" placeholder="Grow our userbase to 1000 paid subscribers">
 			</div>
 			<div class="form-row">									    
-			    <input id="submit" type="submit" name="submit" value="Ship my application already!" class="btn btn-wide">
+			    <input id="submit" type="submit" name="submit" value="This is so cool!" class="btn btn-wide">
 			</div> 
 		</form>	
 		

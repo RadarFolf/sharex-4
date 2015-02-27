@@ -11,7 +11,7 @@ $(function() {
             $(this).fadeIn(500);
         });
     }
-    setInterval(changeWord, 5000);
+    setInterval(changeWord, 3000);
 });
 
 jQuery(document).ready(function($) {

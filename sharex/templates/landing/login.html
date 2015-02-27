@@ -9,7 +9,7 @@
 {% block right_content %}
 <div class="narrow">
     <div class="form-box align-center">
-        <form id="login" name="login" method="post" novalidate="novalidate" action="{% url 'login_view' %}">
+        <form class="form "id="login" name="login" method="post" action="{% url 'login_view' %}">
         	{% csrf_token %}
             <h2>
             	Welcome back
@@ -28,9 +28,6 @@
         </form> 
     </div>
     <div class="shadow"></div>
-    <div class="meta align-center">
-        <a>We would never share your info. NEVER!</a>
-    </div>
     
 </div>
 {% endblock %}

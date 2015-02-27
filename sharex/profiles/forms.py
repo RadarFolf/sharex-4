@@ -1,7 +1,10 @@
 from django import forms
 from .models import Profile, Startup
+from sharex.landing.mails import WELCOME_EMAIL
 from mixpanel import Mixpanel
 from django.conf import settings
+from django.core.mail import send_mail
+import time
 
 class InitialProfileCreationForm(forms.Form):
 	email = forms.EmailField()
@@ -23,8 +26,14 @@ class InitialProfileCreationForm(forms.Form):
 		mixid = self.cleaned_data['mixid']
 		mp.people_set(mixid, {
 			'$email': profile.email,
+			'$date_joined': profile.date_joined.isoformat(),
 			})
 		mp.alias(profile.id, mixid)
+		send_mail(
+			subject='Welcome to sharex.io',
+			message=WELCOME_EMAIL,
+			from_email='martin@sharex.io',
+			recipient_list=[profile.email])
 		return profile
 
 class ApplyForm(forms.ModelForm):

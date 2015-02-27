@@ -2,7 +2,7 @@
 
 {% block left_content %}			
 <h1>Sharex</h1>
-<h3>It's time to figure out how important for you it is to connect with the <strong>right</strong> startups.</h3>
+<h3>It's time to figure out how important it is for you to connect with the <strong>right</strong> startups.</h3>
 </div>
 {% endblock %}
 {% block right_content %}
@@ -10,11 +10,11 @@
 	<div class="form-box align-center">
 		<form action="{% url 'pay_view' %}" method="POST" id='paymentform'>
 			{% csrf_token %}
-			<h2>Be a part of the revolution</h2>
+			<h2>Go big or go home</h2>
 			<p>For only <strong>$24.99</strong> we dig deep into our database to find the perfect connections for your startup.</p>
 			<div class="form-row">
 				<input type="hidden" name="token" id="thetoken" />
-				<input id="customButton" type="submit" value="I want in" class="btn btn-wide">
+				<input id="customButton" type="submit" value="Go big!" class="btn btn-wide">
 			</div>
 		</form>
 		<div class="align-center"><a href="{% url 'success_view' %}">Or get a random incubator for free.</a></div>

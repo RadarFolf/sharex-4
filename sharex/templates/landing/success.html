@@ -1,6 +1,10 @@
 {% extends 'landing/base.html' %}
 {% load staticfiles %}
 
+{% block head %}
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/select2/3.5.2/select2.css">
+{% endblock %}
+
 {% block left_content %}
 <h1>Sharex</h1>
 <h3>We are actively searching the world for the perfect startups for your incubator</h3>
@@ -11,21 +15,54 @@
     <div class="form-box align-center">
         {% if user.token %}
             <h2>Be patient</h2>
-            <p>There are {{ count_profiles }} startups waiting to be connected at this moment. We'll make sure you'll get the best of everything.</p>
-            <p>If you want to be more involved in the process, we'd love to have a Skype chat with you, our skype handle is <strong>sharexio</strong></p>
+            <p>There are {{ count_profiles }} startups waiting to be connected at this moment. We will make sure you get your perfect incubator.</p>
+            <p>If you want to be more involved in the process, we'd love to have a Skype chat with you. Our skype handle is <strong> sharexio</strong></p>
         {% else %}
             <h2>Be patient</h2>
-            <p>There are 37 startups waiting to be connected at this moment, we're gonna have to start with our paid users, the one who wants this the most.</p>
-            <p>If you want to be more involved in the process, we'd love to have a Skype chat with you, our skype handle is <strong>sharexio</strong></p>
-            <p>You can always update to pro to get bumped up.</p>
+            <p>There are {{ count_profiles }} startups waiting to be connected at this moment. Unfortunately free startups are placed behind our pro users.</p>
+            <p>If you want to be more involved in the process, we'd love to have a Skype chat with you. Our skype handle is <strong>sharexio</strong></p>
+            <p>Update to pro if you want the perfect startups in your incubator. We'll also bump you up in the queue.</p>
+            <form action="{% url 'pay_view' %}">
+                {% csrf_token %}
+                <div class="form-row">
+                    <input type="submit" value="Get pro!" class="btn btn-wide">
+                </div>
+            </form>
         {% endif %}
+        <div class="row">
+            <button type="button" class="btn btn-lg btn-default" data-toggle="modal" data-target="#emailModal" ><i class="fa fa-fw fa-users"></i> Add teammates</button>
+        </div>
     </div>
     <div class="shadow"></div>
     
 </div>
+
+<div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="myModalLabel">
+    <div class="modal-dialog">
+        <form action="{% url 'success_view' %}" method="POST">
+            {% csrf_token %}
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h3>Add teammates</h3>
+                    <p>Separate the emails with comma or whitespace</p>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="team-emails" name="emails" style="width: 100%;" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Send emails</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
 {% endblock %}
 
 {% block script %}
+
 <script>
     $(function() {
         {% if user.token %}
@@ -33,6 +70,8 @@
         {% else %}
             mixpanel.track('Success page', {'plan': 'Free'});
         {% endif %}
+        $('#team-emails').select2({tags: [], tokenSeparators:[',', ' ']})
     });
 </script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/select2/3.5.2/select2.js" type="text/javascript"></script>
 {% endblock %}
