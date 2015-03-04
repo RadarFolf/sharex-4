@@ -45,6 +45,7 @@
       email: '{{ user.email }}',
       allowRememberMe: false,
     });
+    mixpanel.track('Clicked pay button');
     e.preventDefault();
   });
 
